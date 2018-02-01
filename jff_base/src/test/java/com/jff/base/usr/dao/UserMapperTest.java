@@ -1,6 +1,6 @@
 package com.jff.base.usr.dao;
 
-import com.jff.base.JffApplication;
+import com.jff.base.JffBaseApplication;
 import com.jff.base.usr.entity.UserEntity;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = JffApplication.class)
+@SpringBootTest(classes = JffBaseApplication.class)
 public class UserMapperTest {
 
     @Autowired

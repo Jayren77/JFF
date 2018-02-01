@@ -16,8 +16,8 @@ public interface UserMapper {
     @Select("select * from user_info")
     public List<UserEntity> queryAll();
 
-    @Insert("insert into user_info (user_name,user_password,user_role,user_cre_time,user_location,user_wx_name,user_header) " +
-            "values (#{userName},#{userPassword},#{userRole},#{userCreTime},#{userLocation},#{userWxName},#{userHeader})")
+    @Insert("insert into user_info (user_name,user_password,user_role,user_cre_time,user_location,user_wx_name,user_header,gender) " +
+            "values (#{userName},#{userPassword},#{userRole},#{userCreTime},#{userLocation},#{userWxName},#{userHeader},#{gender})")
     public int insert(UserEntity userEntity);
 
     @Update("update user_info set user_name = #{newName} where user_name = #{oldName} ")
@@ -31,6 +31,15 @@ public interface UserMapper {
 
     @Update("update user_info set user_header = #{img} where user_name = #{userName} ")
     public int updateHeader(@Param("img") String img,@Param("userName")String userName);
+
+    @Update("update user_info set try_count = try_count+1 where user_name = #{userName} ")
+    public int addTryCount(@Param("userName")String userName);
+
+    @Update("update user_info set login_count = login_count+1 where user_name = #{userName} ")
+    public int addLoginCount(@Param("userName")String userName);
+
+    @Update("update user_info set try_count = 0 where user_name = #{userName} ")
+    public int resetTryCount(@Param("userName")String userName);
 
     @Delete("delete from user_info where user_name = #{userName} ")
     public int delete(@Param("userName")String userName);
