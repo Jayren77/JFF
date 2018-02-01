@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "pages/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ADD8E6",
+    "navigationBarTextStyle": "dark",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "navigationBarTitleText": "Jay杂货铺"
+  }
+}
