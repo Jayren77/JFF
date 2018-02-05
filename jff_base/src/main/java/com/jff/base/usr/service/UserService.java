@@ -2,6 +2,7 @@ package com.jff.base.usr.service;
 
 import com.jff.base.usr.dao.UserMapper;
 import com.jff.base.usr.entity.UserEntity;
+import com.jff.base.usr.entity.WxResponse;
 import com.jff.base.usr.util.UserConstant;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,15 @@ public class UserService implements UserDetailsService{
     @Autowired
     private UserMapper userMapper;
 
+    /**
+     * 请求微信https接口，用code换  openid session_key unionid;
+     * @return 封装后wx返回消息
+     */
+    public WxResponse checkWxLoginCode(){
+        //how 开启HTTPS请求
+
+        return null;
+    }
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
        LOG.info("验证："+username);

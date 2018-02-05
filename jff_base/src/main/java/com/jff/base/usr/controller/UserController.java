@@ -16,6 +16,7 @@ public class UserController {
 
     /**
      * 入库微信端的用户信息
+     * 通过微信登录的用户，用户信息的验证部分其实是交给微信去做的，后台只需要验证登录信息以及记录登录信息即可。
      * @param userEntity
      * @return
      */
