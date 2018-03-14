@@ -1,13 +1,13 @@
-package com.jff.base.usr.util;
+package com.jff.base.util;
 
 import com.google.gson.Gson;
 
 /**
  * 工具类
  */
-public class UserUtils {
+public class GsonUtils {
 
-    private UserUtils(){}
+    private GsonUtils(){}
 
     private static final Gson gson = new Gson();
 

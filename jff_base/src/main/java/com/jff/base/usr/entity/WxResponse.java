@@ -1,4 +1,6 @@
 package com.jff.base.usr.entity;
 
-public class WxResponse {
+import com.jff.base.entity.IJffResponse;
+
+public class WxResponse implements IJffResponse{
 }

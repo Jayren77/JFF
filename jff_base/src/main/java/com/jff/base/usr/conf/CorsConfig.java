@@ -9,6 +9,8 @@ import org.springframework.web.filter.CorsFilter;
 
 /**
  * 控制跨域访问
+ *
+ * 参考：https://www.jianshu.com/p/27060722843b
  */
 @Configuration
 public class CorsConfig {
@@ -20,7 +22,7 @@ public class CorsConfig {
         config.addAllowedOrigin("*");
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
-        source.registerCorsConfiguration("/**", config);
+        source.registerCorsConfiguration("/wx/**", config);
         FilterRegistrationBean bean = new FilterRegistrationBean(new CorsFilter(source));
         bean.setOrder(0);
         return bean;

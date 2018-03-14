@@ -9,4 +9,5 @@ public class JffBaseApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(JffBaseApplication.class, args);
 	}
+
 }

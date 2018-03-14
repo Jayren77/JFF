@@ -1,5 +1,6 @@
-package com.jff.base.usr.entity;
+package com.jff.base.entity;
 
+import com.jff.base.entity.IJffResponse;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -12,7 +13,7 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-public class BaseResponse<T> {
+public class BaseResponse<T> implements IJffResponse{
 
 
     private String msg;

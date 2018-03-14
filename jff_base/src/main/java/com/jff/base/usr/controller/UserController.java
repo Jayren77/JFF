@@ -1,18 +1,23 @@
 package com.jff.base.usr.controller;
 
-import com.jff.base.usr.entity.BaseResponse;
+import com.jff.base.connection.service.HttpService;
+import com.jff.base.entity.BaseResponse;
 import com.jff.base.usr.entity.UserEntity;
-import com.jff.base.usr.util.UserUtils;
+import com.jff.base.util.GsonUtils;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * 用户验证
+ * 用户验证（统一处理web页面以及微信端的用户登录验证请求）
  */
 @RestController
 public class UserController {
 
     private static final Logger LOGGER = Logger.getLogger(UserController.class);
+
+    @Autowired
+    private HttpService httpService;
 
     /**
      * 入库微信端的用户信息
@@ -22,7 +27,7 @@ public class UserController {
      */
     @RequestMapping(value = "/wx/login",method = RequestMethod.POST)
     public BaseResponse wxLogin(@RequestBody UserEntity userEntity){
-        LOGGER.info(UserUtils.toJson(userEntity));
+        LOGGER.info(GsonUtils.toJson(userEntity));
         return null;
     }
 }
